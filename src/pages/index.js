@@ -1,56 +1,57 @@
-import Header from "./Header";
-import Footer from "./Footer";
-import About from "./About";
-import FAQ from "./Home/FAQ";
-import Contact from "./Contact";
-import VideoSection from "./Videos/VideoSection";
-import Photography from "./Photography/Photography";
-import QRSection from "./Qrs/QRSection";
-import Home from "./Home/Home";
-import Login from "./Login";
-import Register from "./Register";
-import Logout from "./Logout";
-import Service from "./Service/Service";
-import Error from "./Error";
-import AdminLayout from "./Admin/AdminLayout";
-import AdminUsers from "./Admin/AdminUsers";
-import AdminContacts from "./Admin/AdminContacts";
-import AdminUpdate from "./Admin/AdminUpdate";
-import Loading from "./Loading";
-import Photoinfo1 from "./Photography/Photoinfo1";
-import Photoinfo2 from "./Photography/Photoinfo2";
-import Photoinfo3 from "./Photography/Photoinfo3";
-import Photoinfo4 from "./Photography/Photoinfo4";
-import Photoinfo5 from "./Photography/Photoinfo5";
-import Photoinfo6 from "./Photography/Photoinfo6";
-import Photoinfo7 from "./Photography/Photoinfo7";
-import Photoinfo8 from "./Photography/Photoinfo8";
-import Photoinfo9 from "./Photography/Photoinfo9";
-import FireCrakers from "./FireCrakers/FireCrackers";
-import MScan from "./Scan/MScan"
-import ScanVideo from "./Scan/ScanVideo"
-import CusScan from "./Scan/CusScan"
-import CusScan2 from "./Scan/CusScan2";
-import Hotel from "./Hotel/Hotel";
-import Courier from "./Courier";
-import Cars from "./Car/Cars";
-import CusAfter from "./Scan/CusAfter";
-import Photo from "./Photography/Photo";
-import Memories from "./Scan/AfterMarriage";
-import { ImOpt } from "react-icons/im";
+import { lazy } from "react";
+
+const Header = lazy(() => import("./Header"));
+const Footer = lazy(() => import("./Footer"));
+const About = lazy(() => import("./About"));
+const FAQ = lazy(() => import("./Home/FAQ"));
+const Contact = lazy(() => import("./Contact"));
+const Home = lazy(() => import("./Home/Home"));
+const VideoSection = lazy(() => import("./Videos/VideoSection"));
+const Photography = lazy(() => import("./Photography/Photography"));
+const QRSection = lazy(() => import("./Qrs/QRSection"));
+const Login = lazy(() => import("./Login"));
+const Register = lazy(() => import("./Register"));
+const Logout = lazy(() => import("./Logout"));
+const Service = lazy(() => import("./Service/Service"));
+const Error = lazy(() => import("./Error"));
+const AdminLayout = lazy(() => import("./Admin/AdminLayout"));
+const AdminUsers = lazy(() => import("./Admin/AdminUsers"));
+const AdminContacts = lazy(() => import("./Admin/AdminContacts"));
+const AdminUpdate = lazy(() => import("./Admin/AdminUpdate"));
+const Loading = lazy(() => import("./Loading"));
+const Photoinfo1 = lazy(() => import("./Photography/Photoinfo1"));
+const Photoinfo2 = lazy(() => import("./Photography/Photoinfo2"));
+const Photoinfo3 = lazy(() => import("./Photography/Photoinfo3"));
+const Photoinfo4 = lazy(() => import("./Photography/Photoinfo4"));
+const Photoinfo5 = lazy(() => import("./Photography/Photoinfo5"));
+const Photoinfo6 = lazy(() => import("./Photography/Photoinfo6"));
+const Photoinfo7 = lazy(() => import("./Photography/Photoinfo7"));
+const Photoinfo8 = lazy(() => import("./Photography/Photoinfo8"));
+const Photoinfo9 = lazy(() => import("./Photography/Photoinfo9"));
+const FireCrakers = lazy(() => import("./FireCrakers/FireCrackers"));
+const MScan = lazy(() => import("./Scan/MScan"));
+const ScanVideo = lazy(() => import("./Scan/ScanVideo"));
+const CusScan = lazy(() => import("./Scan/CusScan"));
+const CusScan2 = lazy(() => import("./Scan/CusScan2"));
+const Hotel = lazy(() => import("./Hotel/Hotel"));
+const Courier = lazy(() => import("./Courier"));
+const Cars = lazy(() => import("./Car/Cars"));
+const CusAfter = lazy(() => import("./Scan/CusAfter"));
+const Photo = lazy(() => import("./Photography/Photo"));
+const Memories = lazy(() => import("./Scan/AfterMarriage"));
+const CardsPartners = lazy(() => import("./Cards/CardsPartners"));
+const CardMahalSection = lazy(() => import("./Cards/CardMahalSection"));
+const CateringMain = lazy(() => import("./Catering/CateringMain"));
+const Catering = lazy(() => import("./Catering/Catering"));
+const YourMenu = lazy(() => import("./Catering/YourMenu"));
+const CateringSection = lazy(() => import("./Catering/CateringSection"));
+const LoginForImage = lazy(() => import("./LoginForImage"));
+const QrCards = lazy(() => import("./Cards/QrCards"));
+const MakeUp = lazy(() => import("./MakeUp/MakeUp"));
+
 import AOS from 'aos';
 import 'aos/dist/aos.css';
-import CardsPartners from "./Cards/CardsPartners";
-import CardMahalSection from "./Cards/CardMahalSection";
-import CateringMain from "./Catering/CateringMain";
-import Catering from "./Catering/Catering";
-import YourMenu from "./Catering/YourMenu";
-import CateringSection from "./Catering/CateringSection";
-import LoginForImage from "./LoginForImage";
-import QrCards from "./Cards/QrCards";
-import MakeUp from "./MakeUp/MakeUp";
 AOS.init();
-
 
 export {
   Header,
