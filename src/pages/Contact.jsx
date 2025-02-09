@@ -23,7 +23,7 @@ const Contact = () => {
 
   const handleContactForm = async (e) => {
     e.preventDefault();
-    console.log("Form data:", data);
+    // console.log("Form data:", data);
     try {
       const response = await fetch(`${API}/api/form/contact`, {
         method: "POST",
@@ -33,7 +33,7 @@ const Contact = () => {
         body: JSON.stringify(data),
       });
 
-      console.log("API response:", response);
+      // console.log("API response:", response);
       if (response.ok) {
         setData(defaultContactFormData);
         const responseData = await response.json();

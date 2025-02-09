@@ -1,5 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { createContext, lazy, Suspense, useState } from "react";
+import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { createContext, lazy, Suspense, useState, useEffect } from "react";
 import {
   Header,
   Footer,
@@ -27,14 +27,13 @@ import {
   Photoinfo6,
   Photoinfo7,
   Photoinfo8,
-  Photoinfo9, 
+  Photoinfo9,
   ScanVideo,
   MScan,
   CusScan,
   CusScan2,
   CusAfter,
   Hotel,
-  Photo,
   Home,
   Courier,
   FireCrakers,
@@ -51,16 +50,22 @@ import {
   MakeUp,
 } from "./pages/index.js";
 
-import Mscan from "./pages/Scan/MScan.jsx";
-import Ibran from "./pages/Cards/Newqrcardslist.jsx";
-// import Home from "./pages/Home.jsx";
-const CardSection = lazy((e) => import("./pages/Cards/CardMahalSection.jsx"));
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
+};
 
 export const ThemeContext = createContext("light");
 const App = () => {
   const [theme, setTheme] = useState("light");
   return (
     <Router>
+      <ScrollToTop />
       <ThemeContext.Provider value={theme}>
         <Header setTheme={setTheme} />
         <Routes>
@@ -99,12 +104,12 @@ const App = () => {
                 <QRSection />
               </Suspense>
             }
-            />
-            <Route 
+          />
+          <Route 
             path="/qrcards"
             element={
               <Suspense fallback={<div>Loading QR Special Cards...</div>}> 
-              <QrCards />
+                <QrCards />
               </Suspense>
             }
           />
@@ -122,16 +127,16 @@ const App = () => {
           <Route path="/Hotel" element={<Suspense fallback={<Loading />}> <Hotel /></Suspense>} />
           <Route path="/MScan" element={<Suspense fallback={<Loading />}> <MScan /></Suspense>} />
           <Route path="/Scan/:inviteId" element={<Suspense fallback={<Loading />}> <ScanVideo /></Suspense>} />
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/service" element={<Service />} />
-          <Route path="/makeup" element={<MakeUp/>} />
-          <Route path="/CateringMain" element={<CateringMain/>}/>
-          <Route path="/Catering" element={<Catering/>}/>
-          <Route path="/CateringSection" element={<CateringSection/>}/>
-          <Route path="/yourmenu" element={<YourMenu/>}/>
-          <Route path="/images" element={<LoginForImage/>}/>
+          <Route path="/register" element={<Suspense fallback={<Loading />}><Register /></Suspense>} />
+          <Route path="/login" element={<Suspense fallback={<Loading />}><Login /></Suspense>} />
+          <Route path="/logout" element={<Suspense fallback={<Loading />}><Logout /></Suspense>} />
+          <Route path="/service" element={<Suspense fallback={<Loading />}><Service /></Suspense>} />
+          <Route path="/makeup" element={<Suspense fallback={<Loading />}><MakeUp /></Suspense>} />
+          <Route path="/CateringMain" element={<Suspense fallback={<Loading />}><CateringMain /></Suspense>} />
+          <Route path="/Catering" element={<Suspense fallback={<Loading />}><Catering /></Suspense>} />
+          <Route path="/CateringSection" element={<Suspense fallback={<Loading />}><CateringSection /></Suspense>} />
+          <Route path="/yourmenu" element={<Suspense fallback={<Loading />}><YourMenu /></Suspense>} />
+          <Route path="/images" element={<Suspense fallback={<Loading />}><LoginForImage /></Suspense>} />
           {/* <Route path="/Photo/:1" element={<Photo/>} /> */}
           <Route path="/Cards" element={<CardsPartners/>} />
           {/* <Route path="/:inviteId" element={<CusScan />} />  */}
@@ -140,10 +145,10 @@ const App = () => {
           <Route path="/Cars" element={<Cars />} />
           <Route path="/CusAfter"  element={<CusAfter/>} />
           <Route path="*" element={<Error />} />
-          <Route path="/admin" element={<AdminLayout />}>
-            <Route path="users" element={<AdminUsers />} />
-            <Route path="contacts" element={<AdminContacts />} />
-            <Route path="users/:id/edit" element={<AdminUpdate />} />
+          <Route path="/admin" element={<Suspense fallback={<Loading />}><AdminLayout /></Suspense>}>
+            <Route path="users" element={<Suspense fallback={<Loading />}><AdminUsers /></Suspense>} />
+            <Route path="contacts" element={<Suspense fallback={<Loading />}><AdminContacts /></Suspense>} />
+            <Route path="users/:id/edit" element={<Suspense fallback={<Loading />}><AdminUpdate /></Suspense>} />
           </Route>
         </Routes>
         <Footer />

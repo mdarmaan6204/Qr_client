@@ -1,7 +1,7 @@
 const Pagination = ({ pageNumber, setPageNumber, cardToShow, cardPerPage }) => {
     const totalPages = cardToShow.length / cardPerPage;
   
-    console.log(totalPages);
+    // console.log(totalPages);
     
   
     const handlePageClick = (page) => {
